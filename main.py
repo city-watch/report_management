@@ -12,8 +12,8 @@ from typing import List, Optional
 from jwt import PyJWTError
 
 # Import your database setup
-from .database import get_db, engine, Base
-from .models import (
+from database import get_db, engine, Base
+from models import (
     Issue, Comment, Confirmation,
     IssueResponse, IssueListResponse, 
     CommentCreateRequest, CommentResponse,
@@ -28,8 +28,10 @@ SECRET_KEY = "super_secret_jwt_key"
 ALGORITHM = "HS256"
 
 # Service URLs
-USER_SERVICE_URL = "http://user-management-service:8000"
-AI_SERVICE_URL = "http://ai-orchestrator:8000"
+# USER_SERVICE_URL = "http://user-management-service:8000"
+# AI_SERVICE_URL = "http://ai-orchestrator:8000"
+AI_SERVICE_URL="http://localhost:8001"
+USER_SERVICE_URL = "http://localhost:8002"
 
 # Google Cloud Storage Configuration
 GCS_BUCKET_NAME = "civic-app-issues-bucket"

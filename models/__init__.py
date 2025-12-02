@@ -4,7 +4,7 @@ from sqlalchemy.sql import func
 from pydantic import BaseModel, ConfigDict
 from typing import List, Optional, Any
 from enum import Enum
-from ..database import Base  # Assumes you have a database.py similar to User Service
+from database import Base  # Assumes you have a database.py similar to User Service
 
 # -------------------------------------------------------
 # DATABASE MODELS (SQLAlchemy)

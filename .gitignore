@@ -6,4 +6,6 @@
 __pycache__/
 
 *.json
-pothole1.jpg
+
+integration_test.py
+
