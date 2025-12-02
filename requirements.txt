@@ -1,0 +1,21 @@
+# --- Core Framework ---
+fastapi[standard]
+
+# --- Server ---
+uvicorn
+
+# --- Data Validation ---
+pydantic
+
+# --- Database ---
+SQLAlchemy
+psycopg2-binary
+python-dotenv
+
+# --- HTTP Client ---
+httpx
+
+# --- Auth ---
+PyJWT
+
+google-cloud-storage

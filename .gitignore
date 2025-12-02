@@ -1,0 +1,11 @@
+# Environments
+.env
+.venv/
+
+# Python cache
+__pycache__/
+
+*.json
+
+integration_test.py
+
