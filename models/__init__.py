@@ -98,6 +98,7 @@ class CommentResponse(BaseModel):
 
 class IssueResponse(BaseModel):
     issue_id: int
+    reporter_id: int
     title: str
     description: Optional[str]
     latitude: float
