@@ -45,23 +45,40 @@ pip install -r requirements.txt
 
 ### 4. Environment Variables
 
-The service requires a `.env` file in the project root for configuration. Create a file named `.env` and add the following line:
+The service requires a `.env` file in the project root for configuration. Create a file named `.env` and add the following lines, replacing the placeholder values as needed:
 
 ```
 DATABASE_URL="postgresql://user:password@host:port/database"
+SECRET_KEY="your_super_secret_jwt_key"
+ALGORITHM="HS256"
+AI_SERVICE_URL="http://localhost:8001"
+USER_SERVICE_URL="http://localhost:8002"
 ```
 
-Replace `"postgresql://user:password@host:port/database"` with your actual database connection string.
+- `DATABASE_URL`: Your database connection string.
+- `SECRET_KEY`: A strong secret key for JWT token encoding.
+- `ALGORITHM`: The algorithm used for JWT signing (e.g., "HS256").
+- `AI_SERVICE_URL`: The URL for the AI orchestration service.
+- `USER_SERVICE_URL`: The URL for the user management service.
 
 ## Running the Service
 
 To run the service, use the following command:
 
 ```bash
-uvicorn main:app --reload
+poetry run fastapi run main.py --port {port number} 
 ```
 
-The service will be available at `http://127.0.0.1:8000`.
+The service will be available at `http://127.0.0.1:8000` if no port is specified.
+
+## Running Tests
+
+To run the unit tests for the service, activate your virtual environment and then use pytest:
+
+```bash
+source .venv/bin/activate
+pytest
+```
 
 ## API Endpoints
 

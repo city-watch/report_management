@@ -19,3 +19,7 @@ httpx
 PyJWT
 
 google-cloud-storage
+pytest
+respx
+pytest-cov
+requests
