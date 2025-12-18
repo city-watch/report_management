@@ -49,6 +49,7 @@ The service requires a `.env` file in the project root for configuration. Create
 
 ```
 DATABASE_URL="postgresql://user:password@host:port/database"
+GOOGLE_APPLICATION_CREDENTIALS="gcp_key.json"
 SECRET_KEY="your_super_secret_jwt_key"
 ALGORITHM="HS256"
 AI_SERVICE_URL="http://localhost:8001"
@@ -66,7 +67,7 @@ USER_SERVICE_URL="http://localhost:8002"
 To run the service, use the following command:
 
 ```bash
-poetry run fastapi run main.py --port {port number} 
+fastapi run main.py --port {port number} 
 ```
 
 The service will be available at `http://127.0.0.1:8000` if no port is specified.
