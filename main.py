@@ -10,6 +10,10 @@ from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 from typing import List, Optional
 from jwt import PyJWTError
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Import your database setup
 from database import get_db, engine, Base
@@ -24,14 +28,12 @@ from models import (
 # -------------------------------------------------------
 # Configuration & Constants
 # -------------------------------------------------------
-SECRET_KEY = "super_secret_jwt_key"
-ALGORITHM = "HS256"
+SECRET_KEY = os.getenv("SECRET_KEY", "super_secret_jwt_key")
+ALGORITHM = os.getenv("ALGORITHM", "HS256")
 
 # Service URLs
-# USER_SERVICE_URL = "http://user-management-service:8000"
-# AI_SERVICE_URL = "http://ai-orchestrator:8000"
-AI_SERVICE_URL="http://localhost:8001"
-USER_SERVICE_URL = "http://localhost:8002"
+USER_SERVICE_URL = os.getenv("USER_SERVICE_URL", "http://localhost:8002")
+AI_SERVICE_URL = os.getenv("AI_SERVICE_URL", "http://localhost:8001")
 
 # Google Cloud Storage Configuration
 GCS_BUCKET_NAME = "civic-app-issues-bucket"
